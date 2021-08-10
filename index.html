@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Segoe UI', SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    .header {
+      max-width: 1440px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      max-height: 54px;
+      padding: 0 82px;
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .nav__logo {
+      background-image: url(./src/img/image-260nw-274497602.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 54px;
+      width: 140px;
+    }
+
+    .nav__separator {
+      display: block;
+      height: 24px;
+      width: 2px;
+      background-color: #000;
+      left: -16px;
+    }
+
+    .nav__surface {
+      position: relative;
+      text-decoration: solid;
+      font-weight: 600;
+      font-size: 20px;
+      color: currentColor;
+    }
+
+    .nav__list {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .nav__item {
+      height: 54px;
+      line-height: 54px;
+      cursor: pointer;
+    }
+
+    .nav__item--dropdown, 
+    .nav__item--search, 
+    .nav__item--cart, 
+    .nav__item--user {
+      position: relative;
+    }
+
+    .nav__item--dropdown::after {
+      position: absolute;
+      right: -15px;
+      top: 48%;
+
+      display: block;
+      content: '';
+      background-image: url(./src/img/down-arrow-svgrepo-com.svg);
+      height: 8px;
+      width: 8px;
+    }
+
+  
+
+    .nav__item--search::after {
+      position: absolute;
+      content: '';
+      top: 36%;
+      right: -20px;
+      background-image: url(./src/img/cart-svgrepo-com.svg);
+      height: 16px;
+      width: 16px;
+    }
+
+    .nav__item--cart::after {
+        position: absolute;
+        content: '';
+        top: 36%;
+        right: -20px;        
+        background-image: url(./src/img/search-svgrepo-com.svg);
+        height: 16px;
+        width: 16px;
+      }
+
+    .nav__item--user::after {
+        position: absolute;
+        content: '';
+        top: 36%;
+        right: -20px;        
+        background-image: url(./src/img/add-user-svgrepo-com.svg);
+        height: 16px;
+        width: 16px;
+      }
+
+  </style>
+  <title>Test task for evol</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="nav">
+      <a href="#" class="nav__logo"></a>
+      <div class="nav__separator"></div>
+      <a href="#" class="nav__surface">Surface</a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--dropdown">Computers</li>
+          <li class="nav__item nav__item--dropdown">Computers for Business</li>
+          <li class="nav__item nav__item--dropdown">Accsessories</li>
+          <li class="nav__item">Support</li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item nav__item--dropdown">All Microsoft</li>
+        <li class="nav__item nav__item--search">Search</li>
+        <li class="nav__item nav__item--cart">Cart</li>
+        <li class="nav__item nav__item--user">User</li>
+      </ul>
+    </nav>
+  </header>
+</body>
+
+</html>

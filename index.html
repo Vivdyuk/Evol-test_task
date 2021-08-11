@@ -31,7 +31,7 @@
       align-items: center;
       background-color: #fff;
       max-height: 54px;
-      padding: 0 82px;
+      /* padding: 0 82px; */
       margin: 0 auto;
     }
 
@@ -42,13 +42,19 @@
       gap: 16px;
     }
 
+    .nav__burger {
+      height: 20px;
+      width: 20px;
+      display: none;
+    }
+
     .nav__logo {
       background-position: center;
       height: 54px;
       width: 140px;
       display: flex;
     }
-   
+
     .nav__logo-logo {
       align-self: center;
     }
@@ -84,16 +90,48 @@
       gap: 5px;
     }
 
+    .nav__item:hover {
+      text-decoration: underline;
+    }
+
+    .nav__item-title {
+      text-decoration: none;
+      color: currentColor;
+    }
+
     .nav__item-arrow {
       height: 22px;
       width: 10px;
       align-self: center;
     }
 
-    .nav__item-picture {
+    .nav__item-cart,
+    .nav__item-search,
+    .nav__item-user {
       height: 20px;
       width: 20px;
       align-self: center;
+    }
+
+    @media (max-width: 859px) {
+      .header {
+        padding: 0 40px;
+      }
+      
+      .nav__burger {
+        display: block;
+      }
+
+      .nav__surface,
+      .nav__item-title,
+      .nav__separator,
+      .nav__item-arrow {
+        display: none;
+      }
+
+      .nav__item-search {
+        order: 1;
+      }
     }
   </style>
   <title>Test task for evol</title>
@@ -101,10 +139,25 @@
 
 <body>
   <header class="header">
+    <a href="#" class="nav__burger">
+      <svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+        version="1.1" viewBox="0 0 24 24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Icon">
+          <path
+            d="M4,6.75l16,0c0.414,0 0.75,-0.336 0.75,-0.75c0,-0.414 -0.336,-0.75 -0.75,-0.75l-16,0c-0.414,0 -0.75,0.336 -0.75,0.75c0,0.414 0.336,0.75 0.75,0.75Z" />
+          <path
+            d="M4,12.75l16,0c0.414,0 0.75,-0.336 0.75,-0.75c0,-0.414 -0.336,-0.75 -0.75,-0.75l-16,0c-0.414,0 -0.75,0.336 -0.75,0.75c0,0.414 0.336,0.75 0.75,0.75Z" />
+          <path
+            d="M4,18.75l16,0c0.414,0 0.75,-0.336 0.75,-0.75c0,-0.414 -0.336,-0.75 -0.75,-0.75l-16,0c-0.414,0 -0.75,0.336 -0.75,0.75c0,0.414 0.336,0.75 0.75,0.75Z" />
+        </g>
+      </svg>
+    </a>
     <div class="nav">
       <a href="#" class="nav__logo">
-        <svg class="nav__logo-logo" version="1.1" id="MS-symbol" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px" y="0px" viewBox="0 0 337.6 72" style="enable-background:new 0 0 337.6 72;" xml:space="preserve">
+        <svg class="nav__logo-logo" version="1.1" id="MS-symbol" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 337.6 72"
+          style="enable-background:new 0 0 337.6 72;" xml:space="preserve">
           <style type="text/css">
             .st0 {
               fill: #737373;
@@ -164,7 +217,7 @@
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item nav__item--dropdown">
-            Computers
+            <a href="" class="nav__item-title">Computers</a>
             <svg class="nav__item-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
               style="enable-background:new 0 0 330 330;" xml:space="preserve">
@@ -204,7 +257,7 @@
             </svg>
           </li>
           <li class="nav__item nav__item--dropdown">
-            Computers for Business
+            <a href="" class="nav__item-title">Computers for Business</a>
             <svg class="nav__item-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
               style="enable-background:new 0 0 330 330;" xml:space="preserve">
@@ -244,7 +297,7 @@
             </svg>
           </li>
           <li class="nav__item nav__item--dropdown">
-            Accsessories
+            <a href="#" class="nav__item-title">Accsessories</a>
             <svg class="nav__item-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
               style="enable-background:new 0 0 330 330;" xml:space="preserve">
@@ -284,15 +337,15 @@
             </svg>
           </li>
           <li class="nav__item">
-            Support
+            <a href="#" class="nav__item-title">Support</a>
           </li>
         </ul>
       </nav>
     </div>
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item nav__item--dropdown">
-          <a>All Microsoft</a>
+        <li class="nav__item">
+          <a href="#" class="nav__item-title">All Microsoft</a>
           <svg class="nav__item-arrow" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
             style="enable-background:new 0 0 330 330;" xml:space="preserve">
@@ -331,9 +384,9 @@
             </g>
           </svg>
         </li>
-        <li class="nav__item nav__item--search">
-          <a>Search</a>
-          <svg class="nav__item-picture" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+        <li class="nav__item">
+          <a href="#" class="nav__item-title">Search</a>
+          <svg class="nav__item-search" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.95 487.95"
             style="enable-background:new 0 0 487.95 487.95;" xml:space="preserve">
             <g>
@@ -376,8 +429,8 @@
           </svg>
         </li>
         <li class="nav__item nav__item--cart">
-          Cart
-          <svg class="nav__item-picture" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          <a href="#" class="nav__item-title">Cart</a> 
+          <svg class="nav__item-cart" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60"
             style="enable-background:new 0 0 60 60;" xml:space="preserve">
             <path d="M11.68,13l-0.833-5h-2.99C7.411,6.28,5.859,5,4,5C1.794,5,0,6.794,0,9s1.794,4,4,4c1.859,0,3.411-1.28,3.858-3h1.294l0.5,3
@@ -421,8 +474,8 @@
           </svg>
         </li>
         <li class="nav__item">
-          <a>User</a>
-          <svg class="nav__item-picture" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+          <a href="#" class="nav__item-title">User</a>
+          <svg class="nav__item-user" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.308 492.308"
             style="enable-background:new 0 0 492.308 492.308;" xml:space="preserve">
             <g>
